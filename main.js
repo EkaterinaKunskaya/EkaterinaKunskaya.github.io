@@ -1,3 +1,9 @@
+const burgerMenuBtn = document.getElementsByClassName('burger-menu')[0];
+const headerNav = document.getElementsByClassName('header-nav')[0];
+const modalHeaderNav = document.getElementsByClassName('modal-header-nav-pop-up')[0];
+
+
+
 const sliderList = document.getElementsByClassName('slider-list')[0];
 
 const sliderCircle1 = document.getElementsByClassName('slider-circle')[0];
@@ -9,6 +15,31 @@ const sliderImg2 = document.getElementsByClassName('slider-img')[1];
 const sliderImg3 = document.getElementsByClassName('slider-img')[2];
 
 let start = 0;
+
+/*Burger menu*/
+
+const headerNavBurger = document.getElementsByClassName('header-nav-burger')[0];
+const burgerClose = document.getElementsByClassName('burger-cross-close')[0];
+
+
+
+
+
+const openBurger = () => {
+  headerNavBurger.classList.add('burger-active');
+  modalHeaderNav.style.display = "block";
+}
+
+const closeBurger = (event) => {
+  if (event.target == modalHeaderNav || event.target == burgerClose) {
+    modalHeaderNav.style.display = "none";
+    headerNavBurger.classList.remove('burger-active');
+  }
+}
+
+burgerMenuBtn.addEventListener('click', openBurger);
+window.addEventListener('click', closeBurger);
+burgerClose.addEventListener('click', closeBurger);
 
 const scrollImg1 = () => {
         start = 800;
