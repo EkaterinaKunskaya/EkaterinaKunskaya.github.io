@@ -744,7 +744,7 @@ h1 {
         flex-direction: column;
         justify-content: space-between;
         text-align: right;
-        margin: 6px 15px 30px 44px;
+        margin: 2px 15px 30px 40px;
     }
 
     .burger-close {
@@ -819,16 +819,16 @@ h1 {
         width: 226.01px;
         font-size: 14px;
         line-height: 17px;
-        margin-left: 0;
+        margin-left: 10px;
     }
 
     .preview-btn-start-planning {
         width: 92px;
         height: 30px;
-        font-size: 11px;
+        font-size: 10px;
         padding: 0;
         line-height: 15px;
-        margin-left: 32px;
+        margin-left: 20px;
         white-space: nowrap;
     }
 
