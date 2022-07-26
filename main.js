@@ -71,20 +71,18 @@ sliderImg3.addEventListener('click', scrollImg3);
 
 
 /*MODAL*/
-// Получить модальный
 const modal = document.getElementsByClassName('modal-login-pop-up')[0];
+const btnLogin = document.getElementsByClassName("header-btn-login")[0];
+const span = document.getElementsByClassName('close')[0];
+const btnSignIn = document.getElementsByClassName('btn-modal-sign-in')[0];
+const emailInput = document.getElementsByClassName('e-mail')[0];
+const passwordInput = document.getElementsByClassName('password')[0];
 
-// Получить кнопку, которая открывает модальный
-const btn = document.getElementsByClassName("header-btn-login")[0];
-
-// Получить элемент <span>, который закрывает модальный
-const span = document.getElementsByClassName("close")[0];
 
 // Когда пользователь нажимает на кнопку, откройте модальный
-btn.onclick = function() {
+btnLogin.onclick = function() {
   modal.style.display = "block";
 }
-
 
 // Когда пользователь щелкает в любом месте за пределами модального, закройте его
 window.onclick = function(event) {
@@ -92,3 +90,19 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+const closeModal = (event) => {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+const sendInf = () => {
+  let email = emailInput.value;
+  let password = passwordInput.value;
+  alert(`email: ${email}, password: ${password}`);
+  modal.style.display = "none";
+}
+
+btnSignIn.addEventListener('click', sendInf);
+window.addEventListener('click', closeModal);
