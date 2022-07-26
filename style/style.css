@@ -780,6 +780,12 @@ h1 {
 
 .modal-register-link a {
     color: #0D606F;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sign-up {
+    height: 500px;
 }
 
 /* MEDIA */

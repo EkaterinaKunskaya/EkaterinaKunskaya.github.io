@@ -11,7 +11,6 @@ const openBurger = () => {
 }
 
 const closeBurger = (event) => {
-  console.log(navListBurger)
   if (event.target == modalHeaderNav || event.target == burgerClose || event.target.tagName === 'A') {
     modalHeaderNav.style.display = "none";
     headerNavBurger.classList.remove('burger-active');
@@ -77,6 +76,8 @@ const span = document.getElementsByClassName('close')[0];
 const btnSignIn = document.getElementsByClassName('btn-modal-sign-in')[0];
 const emailInput = document.getElementsByClassName('e-mail')[0];
 const passwordInput = document.getElementsByClassName('password')[0];
+const modalContent = document.getElementsByClassName('modal-login-pop-up-content')[0];
+const btnRegister = document.getElementsByClassName('register')[0];
 
 
 // Когда пользователь нажимает на кнопку, откройте модальный
@@ -94,6 +95,7 @@ window.onclick = function(event) {
 const closeModal = (event) => {
   if (event.target == modal) {
     modal.style.display = "none";
+    location.reload();
   }
 }
 
@@ -104,5 +106,28 @@ const sendInf = () => {
   modal.style.display = "none";
 }
 
+const register = () => {
+  
+  modalContent.innerHTML = '';
+  modalContent.classList.add('sign-up');
+  modalContent.insertAdjacentHTML('afterbegin' , `
+      <span class="modal-title">Create account</span>
+      <div class="modal-login-pop-up-email">
+          <span>E-mail</span><br>
+          <input type="text" class="e-mail">
+      </div>
+      <div class="modal-login-pop-up-password">
+          <span>Password</span><br>
+          <input type="text" class="password">
+      </div>
+      <button class="modal-btn-common btn-modal-sign-in">Sign Up</button>         
+      <div class="line"></div>
+      <span class="modal-register-link">Already have an account? <a class="register">Log in</a></span>
+  `);
+  
+  console.log(html);
+}
+
 btnSignIn.addEventListener('click', sendInf);
+btnRegister.addEventListener('click', register);
 window.addEventListener('click', closeModal);
