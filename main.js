@@ -1,3 +1,29 @@
+console.log(`Доброго времени суток)
+
+Ваша оценка - 102.5 баллов.
+
+Отзыв по пунктам ТЗ:
+Частично выполненные пункты:
+1) Три точки внизу отображают "номер слайда", то есть каждому слайду соответствует свой кружочек, 
+который становится активным при нахождении соответствующего ему слайда в центре. На мобильном варианте 
+картинка одна, но поверх нее появляются стрелочки навигации (можно сделать как карусель или же затемнять 
+  кнопку если слайдер достиг края).
+Отзыв: Не реализован в мобильной версии.
+
+2) логин попап соответствует верстке его закрытие происходит при клике вне попапа.
+Отзыв: Кнопка Account в мобильной версии не работает.
+
+Выполненные пункты:
+1) На десктоп варианте при клике на урезанную картинку слева или справа изображение меняется 
+по принципу карусели(например если нажать правую картинку та что была в центре на уезжает налево, 
+  а та что была видна наполовину оказывается справа).
+2) Анимации плавного перемещения для слайдера.
+3) Логин попап имеет 2 инпута (логин и пароль) при нажатии на кнопку Sign In показывается браузерный 
+алерт с введенными данными (для реализации можно использовать тег).
+4) Нажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно 
+макету (То есть нажатие не закрывает модал а просто меняет его наполнение).
+`);
+
 /*BURGER MENU*/
 const burgerMenuBtn = document.getElementsByClassName('burger-menu')[0];
 const modalHeaderNav = document.getElementsByClassName('modal-header-nav-pop-up')[0];
@@ -104,28 +130,27 @@ const sendInf = () => {
   let password = passwordInput.value;
   alert(`email: ${email}, password: ${password}`);
   modal.style.display = "none";
+  emailInput.value = '';
+  passwordInput.value = '';
 }
 
 const register = () => {
-  
   modalContent.innerHTML = '';
   modalContent.classList.add('sign-up');
   modalContent.insertAdjacentHTML('afterbegin' , `
-      <span class="modal-title">Create account</span>
-      <div class="modal-login-pop-up-email">
+      <span class="modal-title-sign-up">Create account</span>
+      <div class="modal-login-sign-up-email">
           <span>E-mail</span><br>
-          <input type="text" class="e-mail">
+          <input type="text" class="e-mail-sign-up">
       </div>
-      <div class="modal-login-pop-up-password">
+      <div class="modal-login-sign-up-password">
           <span>Password</span><br>
-          <input type="text" class="password">
+          <input type="text" class="password-sign-up">
       </div>
-      <button class="modal-btn-common btn-modal-sign-in">Sign Up</button>         
+      <button class="modal-btn-common btn-modal-sign-up">Sign Up</button>         
       <div class="line"></div>
-      <span class="modal-register-link">Already have an account? <a class="register">Log in</a></span>
+      <span class="modal-register-link-sign-up">Already have an account? <a class="log-in">Log in</a></span>
   `);
-  
-  console.log(html);
 }
 
 btnSignIn.addEventListener('click', sendInf);
